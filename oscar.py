@@ -1340,11 +1340,12 @@ class Project(_Base):
         chunks = self.uri.split("_", 1)
         prefix = chunks[0]
         if (len(chunks) > 2 or prefix == "sourceforge.net") and prefix in URL_PREFIXES:
-            platform = URL_PREFIXES[prefix]
+            platform = URL_PREFIXES [prefix]
         else:
-            platform = 'github.com'
-        return '/'.join(
-            ('https:/', platform, + chunks[1], '_'.join(chunks[2:])))
+            platform = '/'.join ( ['github.com', chunks[0]])
+        res = '/'.join( [ 'https:/', platform, chunks[1] ] )
+        if (len (chunks) > 2): res = '/' .join ( [res, '_'.join(chunks[2:])] )
+        return res
 
     @cached_property
     def author_names(self):
