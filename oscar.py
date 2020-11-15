@@ -123,9 +123,9 @@ PATHS = _get_paths({
     'OSCAR_ALL_SHA1O': ('/fast/All.sha1o', {
         'blob_offset': 'sha1.blob_{key}.tch',
         # Speed is a bit lower since the content is read from HDD raid
-        'commit_offset': 'sha1.commit_{key}.tch',
+        #'commit_offset': 'sha1.commit_{key}.tch',
         # This way to access trees/commits is not used in python implementation
-        'tree_offset': 'sha1.tree_{key}.tch',
+        #'tree_offset': 'sha1.tree_{key}.tch',
     }),
     'OSCAR_BASEMAPS': ('/da0_data/basemaps', {
         # relations - good to have but not critical
@@ -139,7 +139,7 @@ PATHS = _get_paths({
         'author_projects': 'a2pFull{ver}.{key}.tch',
         'author_files': 'a2fFull{ver}.{key}.tch',
         # this points aunlt to the author-created blobs (see b2a)
-        'author_blob': 'a2bFull{ver}.{key}.tch',
+        #'author_blob': 'a2bFull{ver}.{key}.tch',
         'project_authors': 'p2aFull{ver}.{key}.tch',
 
         'commit_head': 'c2hFull{ver}.{key}.tch',
@@ -159,13 +159,13 @@ PATHS = _get_paths({
         # 'commit_parents': 'c2pcK.{key}.tch'
     }),
     # These can be used to check if the object exists in WoC
-    'OSCAR_ALL_SHA1': ('/fast/All.sha1', {
+    #'OSCAR_ALL_SHA1': ('/fast/All.sha1', {
         # SHA1 cache, currently only on da4, da5  668G
-        'blob_index_line': 'sha1.blob_{key}.tch',  # missing + unused
-        'tree_index_line': 'sha1.tree_{key}.tch',
-        'commit_index_line': 'sha1.commit_{key}.tch',  # unused
-        'tag_index_line': 'sha1.tag_{key}.tch',
-    })
+        #'blob_index_line': 'sha1.blob_{key}.tch',  # missing + unused
+        #'tree_index_line': 'sha1.tree_{key}.tch',
+        #'commit_index_line': 'sha1.commit_{key}.tch',  # unused
+        #'tag_index_line': 'sha1.tag_{key}.tch',
+    #})
 })
 
 # prefixes used by World of Code to identify source project platforms
