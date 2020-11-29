@@ -169,7 +169,7 @@ PATHS = _get_paths({
 })
 
 # prefixes used by World of Code to identify source project platforms
-# See Project.to_url() for more details
+# See Project.url for more details
 # Prefixes have been deprecated by replacing them with the string resembling
 # actual URL
 URL_PREFIXES = {
@@ -1031,8 +1031,8 @@ class Commit(GitObject):
     def project_names(self):
         # type: () -> tuple
         """ URIs of projects including this commit.
-        This property can be used to find all forks of a project
-        by its first commit.
+        This property can be used to find all project
+        that have this commit.
 
         Commit: https://github.com/user2589/minicms/commit/f2a7fcdc
         >>> c = Commit('f2a7fcdc51450ab03cb364415f14e634fa69b62c')
